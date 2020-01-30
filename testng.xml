@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="Main Test Suite" verbose="5">
+
+<parameter name="OS" value="Windows"/>
+<parameter name="browser" value="Chrome"/>
+
+  <test name="Extent Report Test">
+   <classes>
+     <class name="ExtentReport.BasicExtentReport"/>
+    </classes>
+  </test>
+</suite> -->
+
+<suite name="Test Suite" parallel="methods" thread-count="2" verbose="1">
+	<listeners>
+		<listener class-name="extentReportUsingListner.TestListener" />
+	</listeners>
+	<parameter name="browserType" value="chrome" />
+	<parameter name="appURL" value="https://google.com" />
+
+	<test name="Admin Tests">
+		<classes>
+			<!-- <class name="extentReportUsingListner.BasePageTest" /> -->
+			<class name="extentReportUsingListner.SignInPageTest" />
+			<!-- <class name="extentReportUsingListner.CreateAccountTest" /> -->
+		</classes>
+	</test>
+</suite>
